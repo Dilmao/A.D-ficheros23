@@ -10,6 +10,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ej2NIO {
+    // Para hacer el segundo parrafo seguir mirando este enlace
+    // https://es.stackoverflow.com/questions/169031/listar-archivos-de-un-directorio-en-java
     public static void showFiles() {
         Scanner sc = new Scanner(System.in);
         String ruta = "";
