@@ -19,7 +19,7 @@ public class ej2NIO {
         Path p  = Path.of(ruta);
         if (Files.exists(p)) {
             if (Files.isDirectory(p)) {
-                try (DirectoryStream<Path> stream = Files.newDirectoryStream(p, String.format("*.%s"))) {
+                try (DirectoryStream<Path> stream = Files.newDirectoryStream(p, String.format("*"))) {
                     ArrayList<Path> files = new ArrayList<>();
                     stream.forEach(files::add);
                     files.forEach(file -> System.out.println(file.getFileName().toString()));
