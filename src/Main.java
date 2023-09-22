@@ -10,7 +10,9 @@ public class Main {
             System.out.println("""
                         ********************************
                         1. Ejercicio1 ficheros
-                        2. Ejercicio2 ficheros
+                        2. Ejercicio1 ficheros NIO
+                        3. Ejercicio2 ficheros
+                        4. Ejercicio2 ficheros NIO
                         0. Salir
                         ********************************""");
             opcion = sc.next();
@@ -20,7 +22,9 @@ public class Main {
             switch (opcion) {
                 case "0" -> salir = true;
                 case "1" -> code.ej1.checkFiles();
-                case "2" -> code.ej2NIO.showFiles();
+                case "2" -> code.ej1NIO.checkFilesNIO();
+                case "3" -> code.ej2.showFiles();
+                case "4" -> code.ej2NIO.showFiles();
                 default -> System.out.println("");
             }
         }
