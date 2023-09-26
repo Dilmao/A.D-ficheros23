@@ -12,21 +12,23 @@ import java.util.Scanner;
 public class ej2NIO {
     // Para hacer el segundo parrafo seguir mirando este enlace
     // https://es.stackoverflow.com/questions/169031/listar-archivos-de-un-directorio-en-java
-    public static void showFiles() {
+    public static void showFilesNIO() {
         Scanner sc = new Scanner(System.in);
         String ruta = "";
 
         System.out.println("Introduzca la ruta del archivo que quiere comprobar");
         ruta = sc.next();
-        Path p  = Path.of(ruta);
-        if (Files.exists(p)) {
-            if (Files.isDirectory(p)) {
-                try (DirectoryStream<Path> stream = Files.newDirectoryStream(p, String.format("*"))) {
-                    ArrayList<Path> files = new ArrayList<>();
-                    stream.forEach(files::add);
-                    files.forEach(file -> System.out.println(file.getFileName().toString()));
+        Path dir  = Path.of(ruta);
+        if (Files.exists(dir)) {
+            if (Files.isDirectory(dir)) {
+                try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
+                    for (Path p : stream) {
+                        System.out.println(p.getFileName());
+                    }
+                } catch (SecurityException e) {
+                    System.err.println("No tiene permiso de lectura para este directorio");
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    System.err.println("No se ha podido leer el directorio introducido");
                 }
             } else {
                 System.err.println("La ruta introducida no contiene un directorio");
