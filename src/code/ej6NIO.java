@@ -17,6 +17,5 @@ public class ej6NIO {
         } catch (IOException e) {
             System.err.println("Ha ocurrido un problema durante la creacion de la copia de seguridad");
         }
-
     }
 }
