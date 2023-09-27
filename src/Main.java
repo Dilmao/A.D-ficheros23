@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +25,7 @@ public class Main {
                 case "1" -> code.ej1NIO.checkFilesNIO();
                 case "2" -> code.ej2NIO.showFilesNIO();
                 case "3" -> code.ej3NIO.readFiles();
-                case "4" -> code.ej4NIO.writeFiles();
+                case "4" -> code.ej5NIO.writeFiles();
                 default -> System.out.println("");
             }
         }
