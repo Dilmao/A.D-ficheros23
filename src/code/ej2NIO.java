@@ -10,17 +10,22 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ej2NIO {
-    // Para hacer el segundo parrafo seguir mirando este enlace
-    // https://es.stackoverflow.com/questions/169031/listar-archivos-de-un-directorio-en-java
     public static void showFilesNIO() {
         Scanner sc = new Scanner(System.in);
         String ruta = "";
 
+        //Se introduce la rota del fichero a comprobar
         System.out.println("Introduzca la ruta del archivo que quiere comprobar");
         ruta = sc.next();
         Path dir  = Path.of(ruta);
+
+        //Se comprueba si el fichero existe
         if (Files.exists(dir)) {
+
+            //Se comprueba si el fichero es un directorio
             if (Files.isDirectory(dir)) {
+
+                //Se muestran por pantalla todos los archivos que contenga el directorio
                 try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
                     for (Path p : stream) {
                         System.out.println(p.getFileName());

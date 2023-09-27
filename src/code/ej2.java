@@ -13,11 +13,18 @@ public class ej2 {
         Scanner sc = new Scanner(System.in);
         String ruta = "";
 
+        //Se introduce la rota del fichero a comprobar
         System.out.println("Introduzca la ruta del archivo que quiere comprobar");
         ruta = sc.next();
         File f = new File(ruta);
+
+        //Se comprueba si el fichero existe
         if (f.exists()) {
+
+            //Se comprueba si el fichero es un directorio
             if (f.isDirectory()) {
+
+                //Se muestran por pantalla todos los archivos que contenga el directorio
                 for (int contador = 0; contador < f.listFiles().length; contador++) {
                     System.out.println(Arrays.stream(f.listFiles()).toList().get(contador).getName());
                 }

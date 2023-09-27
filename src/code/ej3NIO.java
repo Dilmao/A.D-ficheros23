@@ -9,12 +9,18 @@ public class ej3NIO {
         Scanner sc = new Scanner(System.in);
         String ruta = "";
 
+        //Se introduce la ruta del fichero a leer
         System.out.println("Introduce la ruta del fichero que deseas leer");
         ruta = sc.next();
         Path dir = Path.of(ruta);
 
+        //Se comprueba si se puede leer el fichero
         if (Files.isReadable(dir)) {
+
+            //Se comprueba si el fichero es un archivo de texto
             if (ruta.toString().endsWith(".txt")) {
+
+                //Se lee el archivo de texto y se imprime por pantalla linea a linea
                 try {
                     Files.readAllLines(dir).forEach((line)->{
                         System.out.println(line);
