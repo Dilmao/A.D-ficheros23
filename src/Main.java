@@ -1,11 +1,10 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
-        String opcion = "0";
+        String opcion;
 
         while (!salir) {
             System.out.println("""
@@ -16,7 +15,8 @@ public class Main {
                         4. Ejercicio 4: Escribir en fichero de texto
                         5. Ejercicio 5: Escribir en fichero de texto con permanencia
                         6. Ejercicio 6: Copia de seguridad del ejercicio 5
-                        7. Ejercicio 10: PONER NOMBRE
+                        7. Ejercicio 7: BackUp de carpeta
+                        8. Ejercicio 10: PONER NOMBRE
                         0. Salir
                         *****************************************************************""");
             opcion = sc.next();
@@ -31,7 +31,8 @@ public class Main {
                 case "4" -> code.ej4NIO.writeFiles();
                 case "5" -> code.ej5NIO.writeFiles();
                 case "6" -> code.ej6NIO.createCopy();
-                case "7" -> code.ej10NIO.readFiles();
+                case "7" -> code.backUp.createCopy();
+                case "8" -> code.ej10NIO.readFiles();
                 default -> System.out.println("");
             }
         }
